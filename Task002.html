@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font: normal 15pt Arial;
+        }
+        h1{
+            color: white;
+        }
+        
+    
+    </style>
+</head>
+<body>
+    <h1> Exercise 02 </h1>
+    <p1> Make a code that reads the info about a "person" (full_name, gender, birth_date) and
+        prints the information on an 'alert' window and also on the document.  {Completed}
+    </p1>
+    <script>
+        var person = {
+            fullName: "name_filler",
+            gender: "gender_filler",
+            birth: "00000000",
+        }
+
+        person.fullName = window.prompt("Please type in your full name")
+
+        var aux = Number(window.prompt("1 - Male    2 - Female"))
+        aux == 1 ? person.gender = 'M' : person.gender = 'F'
+
+        person.birth = window.prompt("Input your birthdate (only digits (model: mm/dd/yyyy))")
+        person.birth.length == 8 ? window.alert("okay") : window.alert("Invalid date value")
+
+        var birthDate = (`${person.birth.substr(-8, 2)}/${person.birth.substr(-6, 2)}/${person.birth.substr(-4, 4)}`)
+
+        var info = (`${person.fullName}, ${person.gender}, ${birthDate}`)
+
+        alert(`${info}`)
+
+        document.write(`<br><br><br>   ${info}`)
+    </script>
+</body>
+</html>
